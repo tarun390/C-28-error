@@ -41,7 +41,6 @@ function setup() {
 
 
 function draw() {
-	rectMode(CENTER);
 	background(160,10,255);
 	ground.display();
 	tree.display();
@@ -64,7 +63,6 @@ function draw() {
 	detectCollision(stone, mango6);
 	detectCollision(stone, mango7);
 	detectCollision(stone, mango8);
-console.log(stone)
 	drawSprites();
 	stone.display();
 
@@ -91,9 +89,8 @@ function mouseReleased(){
 }
 
 function keyPressed(){
-    if(keyCode === 32 && stone.body.speed < 1){
-		stone.trajectory = [];
-      	Matter.Body.setPosition(stone.body, {x:235, y:42});
+    if(keyCode === 32 ){
+      	Matter.Body.setPosition(stone.body, {x:180, y:405});
     	slingShot.attach(stone.body);
 	}
 }
